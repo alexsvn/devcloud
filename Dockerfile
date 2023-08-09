@@ -19,8 +19,6 @@ RUN mkdir -p /opt/noVNC
 RUN tar -xzf latest.tar.gz -C /opt/noVNC && rm latest.tar.gz
 
 WORKDIR /opt/noVNC
-COPY vnc.html /opt/noVNC/
-COPY utils/websockify /opt/noVNC/utils/websockify
 
 EXPOSE 6080
 CMD ["./utils/launch.sh", "--vnc", "localhost:8787", "--listen", "6080"]
